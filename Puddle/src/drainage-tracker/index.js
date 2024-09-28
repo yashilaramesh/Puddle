@@ -39,7 +39,7 @@ app.get('/api/reports', async (req, res) => {
 });
 
 // admin put route
-app.put('/admin/reports/:id', async (req, res) => {
+app.put('/admin/reports/:id', async (req, res) => { // it is /admin. be aware. i spent 30 min debugging just to realize i put the wrong url.
     try {
       const { status } = req.body;  // get new status
   
