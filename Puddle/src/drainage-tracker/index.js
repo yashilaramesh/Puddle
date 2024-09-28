@@ -17,8 +17,13 @@ app.post('/api/reports', async (req, res) => {
   try {
     const timezone = 'America/New_York';
     const localTimeStamp = moment().tz(timezone).toDate();
+    
+    const reportData = {
+      ...req.body,
+      timestamp: localTimeStamp
+    };
 
-    const newReport = new Report(req.body);  // make new report
+    const newReport = new Report(reportData);  // make new report
     const savedReport = await newReport.save();  // save report
     res.json(savedReport);  // return saved report
   } catch (err) {
@@ -27,11 +32,20 @@ app.post('/api/reports', async (req, res) => {
   }
 });
 
+
 // get route
 app.get('/api/reports', async (req, res) => {
   try {
+    const timezone = 'America/New_York';
     const reports = await Report.find();  // get all reports from db
-    res.json(reports); // convert report to json
+
+    // Convert each report's timestamp to the desired timezone
+    const convertedReports = reports.map(report => ({
+      ...report.toObject(),
+      timestamp: moment(report.timestamp).tz(timezone).format()
+    }));
+
+    res.json(convertedReports); // send the reports with the converted timestamp
   } catch (err) {
     console.error(err.message);
     res.status(500).send('Server error');
