@@ -38,6 +38,34 @@ app.get('/api/reports', async (req, res) => {
   }
 });
 
+// admin put route
+app.put('/admin/reports/:id', async (req, res) => {
+    try {
+      const { status } = req.body;  // get new status
+  
+      const report = await Report.findById(req.params.id); // get report
+  
+      if (!report) {
+        return res.status(404).json({ msg: 'Report not found' });
+      }
+  
+      report.status = status; // update status
+  
+      if (status === 'Resolved') { // if resolved, delete report
+        await Report.findByIdAndDelete(req.params.id);
+        return res.json({ msg: 'Report resolved' });
+      }
+  
+      // save status (not resolved)
+      const updatedReport = await report.save();
+      res.json(updatedReport);
+  
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send('Server error');
+    }
+  });
+
 // start server
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
