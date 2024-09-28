@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Report Drainage Issue</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div id="reportWrapper">
+      <header>
+        <div id="reportHeader">Report</div>
+      </header>
+
+      <section>
+        <form id="reportForm">
+          <label class="question" for="location">Address</label>
+          <input
+            type="text"
+            id="location"
+            name="location"
+            required
+            placeholder="Enter the address"
+          />
+
+          <div class="question">Report Type</div>
+          <div class="selectionBox">
+            <div>
+              <input
+                type="radio"
+                id="missingSigns"
+                name="reportType"
+                value="missingSigns"
+              />
+              <label for="missingSigns">Missing Signs</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                id="blockedRoads"
+                name="reportType"
+                value="blockedRoads"
+              />
+              <label for="blockedRoads">Blocked Roads</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                id="damagedInfra"
+                name="reportType"
+                value="damagedInfra"
+              />
+              <label for="damagedInfra">Damaged Infrastructures</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                id="floodings"
+                name="reportType"
+                value="floodings"
+              />
+              <label for="floodings">Blocked Drainage Floodings</label>
+            </div>
+          </div>
+
+          <label class="question" for="description">Description</label>
+          <textarea id="description" name="description" required></textarea>
+
+          <label class="question" for="media">Photo/Video</label>
+          <div id="mediaWrapper">
+            <input
+              type="file"
+              id="media"
+              name="media"
+              accept="image/*,video/*"
+              required
+            />
+          </div>
+
+          <button id="submitButton" type="submit">Submit</button>
+        </form>
+      </section>
+
+      <script src="form.js" type="module"></script>
+    </div>
+  </body>
+</html>
