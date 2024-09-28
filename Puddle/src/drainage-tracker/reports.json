@@ -1,0 +1,24 @@
+[
+{
+    "_id":{"$oid":"66f7608fa30d3e8fa48cb5e0"},
+    "picture":"https://media.11alive.com/assets/WXIA/images/3d25969b-d085-4efd-84a5-058879d453f4/3d25969b-d085-4efd-84a5-058879d453f4_1140x641.jpg",
+    "location":{"latitude":33.777242,"longitude":-84.396119},
+    "issueType":"Fallen tree",
+    "status":"Submitted",
+    "description":"Tree fell next to Klaus near the rainbow stairs.",
+    "timestamp":{"$date":"2024-09-28T01:49:03.097Z"},
+    "__v":0
+},
+
+
+{
+    "_id":{"$oid":"66f76213b23bfa36118b06a6"},
+    "picture":"https://media.11alive.com/assets/WXIA/images/3d25969b-d085-4efd-84a5-058879d453f4/3d25969b-d085-4efd-84a5-058879d453f4_1140x641.jpg",
+    "location":{"latitude":33.777242,"longitude":-84.396119},
+    "issueType":"Fallen tree",
+    "status":"Submitted",
+    "description":"Tree fell next to Klaus near the rainbow stairs.",
+    "timestamp":{"$date":"2024-09-28T01:55:31.876Z"},
+    "__v":0
+}
+]
