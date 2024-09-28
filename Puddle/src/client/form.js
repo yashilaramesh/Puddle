@@ -1,19 +1,59 @@
-// form.js
 import { submitReport } from './api.js';
 
 document.querySelector('#reportForm').addEventListener('submit', async (event) => {
-    event.preventDefault();
+  event.preventDefault();
 
-    const description = document.querySelector('#description').value;
-    const location = document.querySelector('#location').value;
-    const media = document.querySelector('#media').files[0];
+  const description = document.getElementById('description').value;
+  const location = document.getElementById('location').value;
+  const reportType = document.querySelector('input[name="reportType"]:checked').value;
+  const mediaFile = document.getElementById('media').files[0];
 
-    const formData = new FormData();
-    formData.append('description', description);
-    formData.append('location', location);
-    formData.append('media', media);
+  // Function to convert the media file to a Base64 string
+  const convertToBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = (error) => reject(error);
+    });
+  };
 
-    await submitReport(formData);
+  // Convert media file to Base64
+  let mediaBase64 = '';
+  if (mediaFile) {
+    mediaBase64 = await convertToBase64(mediaFile);
+  }
+
+  const report = {
+    location,
+    issueType: reportType,
+    description,
+    picture: mediaBase64  // Send the Base64 encoded media as a string
+  };
+
+  try {
+    const response = await fetch('http://localhost:8080/api/reports', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(report)  // Send the report as JSON with Base64 media
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to submit report');
+    }
+
+    const data = await response.json();
+    console.log('Report submitted successfully:', data);
 
     alert('Report submitted successfully!');
+
+    // Reset the form after submission
+    document.getElementById('reportForm').reset();
+
+  } catch (error) {
+    console.error('Error submitting report:', error);
+    alert('Failed to submit report. Please try again.');
+  }
 });
