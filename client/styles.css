@@ -1,0 +1,189 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "inter";
+
+  background-color: #9eb392;
+}
+
+#headerWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#title {
+  font-size: 200px;
+  font-weight: 400px;
+  font-family: "Irish Grover";
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 150px;
+  margin-bottom: 20px;
+}
+
+#buttonWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 440px;
+  position: relative;
+}
+
+.button {
+  width: 200px;
+  height: 70px;
+
+  font-size: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 40px;
+
+  background-color: #7b6e56;
+  color: white;
+  transition: 0.3s;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: #df86a1;
+}
+
+/* report.html ===============>  */
+#reportWrapper {
+  background-color: #efefef;
+  width: 950px;
+  margin-top: 40px;
+  margin-bottom: 50px;
+
+  border-radius: 30px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#reportHeader {
+  margin-top: 55px;
+  margin-bottom: 30px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 27px;
+  font-weight: 700;
+}
+
+#reportForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.question {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 800px;
+  height: 30px;
+  background-color: #484848;
+
+  border-radius: 50px;
+
+  color: white;
+}
+
+#location {
+  width: 800px;
+  height: 30px;
+
+  border-radius: 30px;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 30px;
+
+  text-indent: 20px;
+
+  background-color: #d1d1d1;
+}
+
+.selectionBox {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  margin-right: 500px;
+}
+
+#description {
+  width: 775px;
+  height: 50px;
+
+  border-radius: 30px;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 30px;
+
+  text-indent: 10px;
+  padding: 15px;
+
+  background-color: #d1d1d1;
+}
+
+#media {
+  margin-left: 70px;
+}
+
+#mediaWrapper {
+  background-color: #d1d1d1;
+  border-radius: 30px;
+
+  margin-top: 10px;
+  margin-bottom: 30px;
+
+  height: 40px;
+  width: 800px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#submitButton {
+  margin-bottom: 30px;
+
+  background-color: #484848;
+  color: white;
+
+  border: none;
+
+  width: 300px;
+  height: 30px;
+  border-radius: 30px;
+
+  transition: 0.3s;
+}
+
+#submitButton:hover {
+  background-color: #df86a1;
+  cursor: pointer;
+}
