@@ -3,22 +3,15 @@ const mongoose = require('mongoose');
 const reportSchema = new mongoose.Schema({
   picture: {
     // string is a url to the img
-    type: String,
-    required: true
+    type: String
   },
   location: {
-    latitude: {
-      type: Number,
-      required: true
-    },
-    longitude: {
-      type: Number,
-      required: true
-    }
+    type: String,
+    required:true
   },
   issueType: {
     type: String,
-    enum: ['Blocked drain', 'Flooding', 'Fallen tree', 'Blocked road'],
+    enum: ['floodings', 'damagedInfra', 'missingSigns', 'blockedRoads', 'construction'],
     required: true
   },
   status: {

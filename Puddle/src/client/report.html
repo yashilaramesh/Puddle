@@ -68,6 +68,15 @@
               />
               <label for="floodings">Blocked Drainage Floodings</label>
             </div>
+            <div>
+              <input
+                type="radio"
+                id="construction"
+                name="reportType"
+                value="construction"
+              />
+              <label for="construction">Construction</label>
+            </div>
           </div>
 
           <label class="question" for="description">Description</label>
@@ -80,7 +89,6 @@
               id="media"
               name="media"
               accept="image/*,video/*"
-              required
             />
           </div>
 
@@ -89,34 +97,6 @@
       </section>
 
       <script src="form.js" type="module"></script>
-      <script>
-        const reportForm = document.getElementById('reportForm');
-        reportForm.addEventListener('submit', async (event) => {
-      event.preventDefault();
-
-      const newReport = {
-        title: document.getElementById('title').value,
-        description: document.getElementById('description').value
-      };
-
-      try {
-        const response = await fetch('http://localhost:3000/reports', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(newReport)
-        });
-
-        const result = await response.json();
-        console.log('New report created:', result);
-
-        // Refresh the report list
-        fetchReports();
-      } catch (error) {
-        console.error('Error creating report:', error);
-      }
-    });
-
-      </script>
     </div>
   </body>
 </html>

@@ -81,5 +81,5 @@ app.put('/admin/reports/:id', async (req, res) => { // it is /admin. be aware. i
   });
 
 // start server
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8081;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
