@@ -1,5 +1,5 @@
 # Puddle
-
+A HackGT 11 Project by Gene Chang, Jubi Park, Yashila Ramesh, and Maddie White
 ## Inspiration
 With the recent Hurricane Helene coming through Atlanta (and therefore Georgia Tech), there have been a lot of blocked drains and large bodies of water blocking roads and walkways around campus. Outside of Georgia Tech, there have also been fallen trees and general flooding that has closed off many roads around the city. This is inconvinent for people trying to travel around the city but having their usual roads blocked off by flooding.
 
