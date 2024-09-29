@@ -1,24 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Drainage Issue Reporting System</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>Drainage Issue Reporting System</h1>
-        <nav>
-            <a href="report.html">Report an Issue</a>
-            <a href="dashboard.html">Your Reports</a>
-        </nav>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap"
+      rel="stylesheet"
+    />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet"
+  />
+  </head>
+  <body>
+    <header id="headerWrapper">
+      <div id="title">Puddle</div>
+
+      <nav id="buttonWrapper">
+        <a class="button" href="report.html" style="text-decoration: none"
+          >New Report</a
+        >
+        <a class="button" href="reportlist.html" style="text-decoration: none"
+          >Report List</a
+        >
+        <a class="button" href="adminDashboard.html" style="text-decoration: none"
+          >Admin</a
+        >
+      </nav>
+      <img src="images/puddle.png" id="headerImage"></img>
     </header>
-    
-    <section id="map-container">
-        <!-- Map will be loaded here via JavaScript -->
-    </section>
-    
-    <script src="map.js" type="module"></script>
-</body>
+
+
+  </body>
 </html>
