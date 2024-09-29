@@ -109,3 +109,8 @@ body {
 #detailContent {
   margin-top: 10px;
 }
+#map {
+  height: 500px;
+  width: 500px;
+  font-color: black;
+}
