@@ -1,10 +1,20 @@
+var map;
+
 function initMap(){
   var options = {
     center: {lat: 33.7756, lng:-84.3962},
-    zoom: 8
+    zoom: 13
   }
   map = new google.maps.Map(document.getElementById("map"),options)
+  // Add markers at specific locations
+  const locations = [
+    { lat: 25.7617, lng: -80.1918 },  // Miami
+    { lat: 25.7959, lng: -80.2871 },  // Another location
+    { lat: 25.7892, lng: -80.2264 }   // Another location
+  ];
 
+  // Loop through the locations and place a marker for each
+  
 }
 window.onload = initMap;
 function fetchJson () {
@@ -26,7 +36,7 @@ function fetchJson () {
 
 }
 const location = [];
-
+const markers =[];
 //Fetches reports from backend
 //take adrress to a position
 fetchJson().then(reports => {
@@ -41,7 +51,18 @@ fetchJson().then(reports => {
               .then(data => {
               if (data.status === "OK") {
                   location.push(data.results[0].geometry.location);
-                  // console.log(location);
+                  markers.push(new google.maps.Marker({
+                    position: data.results[0].geometry.location,
+                    map: map,
+                  }))
+                  console.log(location);
+                  markers.forEach((mark) => {
+                    new google.maps.Marker({
+                      position: mark.position,
+                      map: map,
+                    });
+                  });
+                  console.log("asjdfh "+ markers);
               } else {
                   console.error("Geocoding failed: " + data.status);
               }
