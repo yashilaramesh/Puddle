@@ -19,7 +19,7 @@
     </a>
 
     <div id="titleWrapper">
-      <div id="title">Reports</div>
+      <div id="title">Category name</div>
     </div>
 
     <div id="contentWrapper">
@@ -55,17 +55,15 @@
 
       <!-- list -->
       <div id="listWrapper">
-        <!-- map it and make this link to detailed page -->
+        <!-- Add the reportsContainer for dynamic content -->
         <div id="listContentWrapper">
-          <a
-            id="listLink"
-            href="detail.html"
-            style="text-decoration: none; color: white"
-          >
-            Reports listed here
-          </a>
+          <div id="reportsContainer"></div>
+
         </div>
       </div>
     </div>
+    
+    <!-- Moved the script outside the anchor tag -->
+    <script src="reportlist.js"></script>
   </body>
 </html>
